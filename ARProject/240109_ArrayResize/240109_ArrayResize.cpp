@@ -1,7 +1,15 @@
 ﻿#include <iostream>
 #include <ConsoleEngine/EngineDebug.h>
 
+#include "IntArray.h"
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    IntArray NewArray = IntArray(5);
+
+    for (int i = 0; i < NewArray.Num(); i++)
+    {
+        NewArray[i] = i;
+    }
+
 }
