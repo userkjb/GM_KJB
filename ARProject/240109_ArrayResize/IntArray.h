@@ -10,7 +10,12 @@ public :
 	void ReSize(int _Size);
 	void Release();
 
-	inline int Num();	
+	inline int Num();
+
+	int& operator[](int _Count)
+	{
+		return ArrPtr[_Count];
+	}
 	
 private :
 	int NumValue = -1;
