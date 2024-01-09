@@ -10,7 +10,10 @@ public :
 	void ReSize(int _Size);
 	void Release();
 
-	inline int Num();
+	inline int Num()
+	{
+		return NumValue;
+	}
 
 	int& operator[](int _Count)
 	{
