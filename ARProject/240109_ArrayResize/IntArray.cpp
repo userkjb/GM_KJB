@@ -14,6 +14,14 @@ void IntArray::ReSize(int _Size)
 	{
 		MsgBoxAssert("ReSize() 파라미터의 값이 0입니다.");
 	}
+	
+	if (ArrPtr != nullptr)
+	{
+		Release();
+	}
+
+	NumValue = _Size;
+	ArrPtr = new int[_Size];	
 }
 
 void IntArray::Release()
