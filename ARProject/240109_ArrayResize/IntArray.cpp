@@ -18,4 +18,9 @@ void IntArray::ReSize(int _Size)
 
 void IntArray::Release()
 {
+	if (ArrPtr != nullptr)
+	{
+		delete[] ArrPtr;
+		ArrPtr = nullptr;
+	}
 }
