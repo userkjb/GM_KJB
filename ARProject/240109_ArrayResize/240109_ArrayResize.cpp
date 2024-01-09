@@ -25,6 +25,7 @@ int main()
     NewArray.ReSize(10);
 
     // print
+    std::cout << std::endl;
     for (int i = 0; i < NewArray.Num(); i++)
     {
         std::cout << NewArray[i] << std::endl;

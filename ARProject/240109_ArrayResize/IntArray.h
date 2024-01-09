@@ -10,6 +10,8 @@ public :
 	void ReSize(int _Size);
 	void Release();
 
+	void Copy(const IntArray& _Other);
+
 	inline int Num()
 	{
 		return NumValue;
@@ -28,5 +30,6 @@ public :
 private :
 	int NumValue = -1;
 	int* ArrPtr = nullptr;
+	int* IntBuffer = nullptr;
 };
 
