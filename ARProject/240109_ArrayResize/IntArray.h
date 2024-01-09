@@ -1,4 +1,6 @@
 #pragma once
+#include <ConsoleEngine/EngineDebug.h>
+
 class IntArray
 {
 public :
