@@ -2,10 +2,12 @@
 
 IntArray::IntArray(int _Size)
 {
+	ReSize(_Size);
 }
 
 IntArray::~IntArray()
 {
+	Release();
 }
 
 void IntArray::ReSize(int _Size)
