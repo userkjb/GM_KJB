@@ -5,7 +5,7 @@
 
 int main()
 {
-    LeckCheck;
+    LeakCheck;
 
     IntArray NewArray = IntArray();
     NewArray.SetNumValue(0);
