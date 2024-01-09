@@ -7,8 +7,9 @@ int main()
 {
     LeckCheck;
 
-    IntArray NewArray = IntArray(5);
+    IntArray NewArray = IntArray();
     NewArray.SetNumValue(0);
+    NewArray.ReSize(5);
 
     for (int i = 0; i < NewArray.Num(); i++)
     {
@@ -21,6 +22,7 @@ int main()
         std::cout << NewArray[i] << std::endl;
     }
 
+    int a = 0;
 
     //NewArray.ReSize(10);
 

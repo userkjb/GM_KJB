@@ -1,8 +1,7 @@
 #include "IntArray.h"
 
-IntArray::IntArray(int _Size)
+IntArray::IntArray()
 {
-	ReSize(_Size);
 }
 
 IntArray::~IntArray()

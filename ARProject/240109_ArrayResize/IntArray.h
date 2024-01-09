@@ -4,7 +4,7 @@
 class IntArray
 {
 public :
-	IntArray(int _Size);
+	IntArray();
 	~IntArray();
 
 	void ReSize(int _Size);
