@@ -5,6 +5,8 @@
 
 int main()
 {
+    LeckCheck;
+
     IntArray NewArray = IntArray(5);
 
     for (int i = 0; i < NewArray.Num(); i++)
@@ -12,4 +14,18 @@ int main()
         NewArray[i] = i;
     }
 
+    // print
+    for (int i = 0; i < NewArray.Num(); i++)
+    {
+        std::cout << NewArray[i] << std::endl;
+    }
+
+
+    //NewArray.ReSize(10);
+
+    //// print
+    //for (int i = 0; i < NewArray.Num(); i++)
+    //{
+    //    std::cout << NewArray[i] << std::endl;
+    //}
 }

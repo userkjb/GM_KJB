@@ -9,5 +9,9 @@
     <ClCompile Include="240109_ArrayResize.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="IntArray.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IntArray.h" />
   </ItemGroup>
 </Project>
