@@ -22,13 +22,11 @@ int main()
         std::cout << NewArray[i] << std::endl;
     }
 
-    int a = 0;
+    NewArray.ReSize(10);
 
-    //NewArray.ReSize(10);
-
-    //// print
-    //for (int i = 0; i < NewArray.Num(); i++)
-    //{
-    //    std::cout << NewArray[i] << std::endl;
-    //}
+    // print
+    for (int i = 0; i < NewArray.Num(); i++)
+    {
+        std::cout << NewArray[i] << std::endl;
+    }
 }
