@@ -8,6 +8,7 @@ int main()
     LeckCheck;
 
     IntArray NewArray = IntArray(5);
+    NewArray.SetNumValue(0);
 
     for (int i = 0; i < NewArray.Num(); i++)
     {
