@@ -30,6 +30,5 @@ public :
 private :
 	int NumValue = -1;
 	int* ArrPtr = nullptr;
-	int* IntBuffer = nullptr;
 };
 

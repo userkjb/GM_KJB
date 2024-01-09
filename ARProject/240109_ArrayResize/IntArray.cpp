@@ -16,32 +16,20 @@ void IntArray::ReSize(int _Size)
 		MsgBoxAssert("ReSize() 파라미터의 값이 0입니다.");
 		return;
 	}
-
-	// 기존 배열의 size보다 입력된 값이 커야한다.
-	if (NumValue > _Size)
-	{
-		MsgBoxAssert("기존의 값보다 입력받은 값이 작습니다.");
-		return;
-	}
 	
-	// 배열에 비어있다면,
-	if (ArrPtr == nullptr)
-	{
-		ArrPtr = new int[_Size];
-	}
-	else
-	{
-		IntBuffer = new int[_Size]; // 새로운 것을 만든 다음
-		for (int i = 0; i < NumValue; i++) // 기존의 크기 만큼.
-		{
-			IntBuffer[i] = ArrPtr[i]; // 기존의 값을 새로운 곳에 넣고
-		}
-		delete[] ArrPtr;
+	int* IntBuffer = ArrPtr; // 기존 배열 주소 대입.
+	ArrPtr = new int[_Size];
 
-		Release(); // 문제의 원인. -842150451 (?)
+	int CopySize = NumValue <= _Size ? NumValue : _Size;
+	
+	for (int i = 0; i < CopySize; i++)
+	{
+		ArrPtr[i] = IntBuffer[i];
 	}
 
-	NumValue = _Size; // Get
+	delete[] IntBuffer;
+
+	NumValue = _Size; // GetFunction
 }
 
 void IntArray::Release()
@@ -50,5 +38,16 @@ void IntArray::Release()
 	{
 		delete[] ArrPtr;
 		ArrPtr = nullptr;
+	}
+}
+
+void IntArray::Copy(const IntArray& _Other)
+{
+	NumValue = _Other.NumValue;
+
+	ReSize(NumValue); // 생성.
+	for (int i = 0; i < NumValue; i++)
+	{
+		ArrPtr[i] = _Other.ArrPtr[i];
 	}
 }
