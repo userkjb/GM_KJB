@@ -15,6 +15,11 @@ public :
 		return NumValue;
 	}
 
+	inline void SetNumValue(const int _Value)
+	{
+		NumValue = _Value;
+	}
+
 	int& operator[](int _Count)
 	{
 		return ArrPtr[_Count];
