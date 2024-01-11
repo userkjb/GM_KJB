@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleEngine", "ConsoleEng
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{2425F1BF-86C9-40F9-B0FC-D03D97B67606}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "240111_RList", "240111_RList\240111_RList.vcxproj", "{394127E8-C7DC-4F6B-9B4C-25E696D28029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -35,6 +37,14 @@ Global
 		{1C6AE85B-6105-4C8D-AC60-FCFF1BD2DC35}.Release|x64.Build.0 = Release|x64
 		{1C6AE85B-6105-4C8D-AC60-FCFF1BD2DC35}.Release|x86.ActiveCfg = Release|Win32
 		{1C6AE85B-6105-4C8D-AC60-FCFF1BD2DC35}.Release|x86.Build.0 = Release|Win32
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Debug|x64.ActiveCfg = Debug|x64
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Debug|x64.Build.0 = Debug|x64
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Debug|x86.ActiveCfg = Debug|Win32
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Debug|x86.Build.0 = Debug|Win32
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Release|x64.ActiveCfg = Release|x64
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Release|x64.Build.0 = Release|x64
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Release|x86.ActiveCfg = Release|Win32
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{580997DA-2B52-49A2-BE60-9883F3DC7E28} = {AFE5E695-E9ED-42A3-8840-508A8FDFD9D4}
 		{1C6AE85B-6105-4C8D-AC60-FCFF1BD2DC35} = {2425F1BF-86C9-40F9-B0FC-D03D97B67606}
+		{394127E8-C7DC-4F6B-9B4C-25E696D28029} = {AFE5E695-E9ED-42A3-8840-508A8FDFD9D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0583CAC5-C831-44B1-91DD-7F687DAA6869}
