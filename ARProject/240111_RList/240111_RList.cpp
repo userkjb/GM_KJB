@@ -3,7 +3,7 @@
 #include <ConsoleEngine/EngineDebug.h>
 
 typedef int DataType;
-
+//template<typename DataType>
 class MyList
 {
 private:
@@ -15,77 +15,72 @@ private:
 		ListNode* Prev = nullptr;
 	};
 
-
-public:
-	class iterator
+	class iteratorBase
 	{
 		friend MyList;
 
+	public :
+		iteratorBase() {}
+		iteratorBase(ListNode* _CurNode)
+			:CurNode(_CurNode)
+		{
+
+		}
+
+		bool operator!=(const iteratorBase& _Other)
+		{
+			return CurNode != _Other.CurNode;
+		}
+
+		DataType& operator*()
+		{
+			return CurNode->Data;
+		}
+
+		virtual void operator++()
+		{
+		}
+
+	protected :
+		ListNode* CurNode = nullptr;
+	};
+
+public:
+	class iterator : public iteratorBase
+	{
 	public:
 		iterator()
 		{
 		}
 
 		iterator(ListNode* _CurNode)
-			: CurNode(_CurNode)
+			: iteratorBase(_CurNode)
 		{
 		}
 
-		bool operator!=(const iterator& _Other)
-		{
-			return CurNode != _Other.CurNode;
-		}
-
-		DataType& operator*()
-		{
-			return CurNode->Data;
-		}
-
-		// 연산자 겹지정 중에 
-		void operator++()
+		void operator++() override
 		{
 			CurNode = CurNode->Next;
 		}
-
-
-	private:
-		ListNode* CurNode = nullptr;
 	};
 
-	class reverse_iterator
+	class reverse_iterator : public iteratorBase
 	{
-		friend MyList;
-
 	public:
 		reverse_iterator()
 		{
 		}
 
 		reverse_iterator(ListNode* _CurNode)
-			: CurNode(_CurNode)
+			: iteratorBase(_CurNode)
 		{
 		}
 
-		bool operator!=(const reverse_iterator& _Other)
-		{
-			return CurNode != _Other.CurNode;
-		}
-
-		DataType& operator*()
-		{
-			return CurNode->Data;
-		}
-
-		// 연산자 겹지정 중에 
-		void operator++()
+		void operator++() override
 		{
 			CurNode = CurNode->Prev;
 		}
-
-	private:
-		ListNode* CurNode = nullptr;
 	};
-
 
 	MyList()
 	{
@@ -162,7 +157,7 @@ public:
 
 	}
 
-	iterator erase(iterator& _Iter)
+	iteratorBase erase(iteratorBase& _Iter)
 	{
 		if (_Iter.CurNode == Start)
 		{
