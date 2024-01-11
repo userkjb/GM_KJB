@@ -47,6 +47,11 @@ public:
 			CurNode = CurNode->Next;
 		}
 
+		void operator--()
+		{
+			CurNode = CurNode->Prev;
+		}
+
 
 	private:
 		ListNode* CurNode = nullptr;
@@ -82,6 +87,16 @@ public:
 	iterator end()
 	{
 		return iterator(End);
+	}
+
+	iterator rbegin()
+	{
+		return iterator(End->Prev);
+	}
+
+	iterator rend()
+	{
+		return iterator(Start);
 	}
 
 	// End의 Prev에 새로운 데이터를 넣겠다.
@@ -187,7 +202,26 @@ int main()
 	}
 
 	{
-		std::cout << "내 리스트" << std::endl;
+		std::cout << "My 리스트" << std::endl;
+		MyList NewList = MyList();
 
+		// 0, 1, 2, 3, 4
+		for (int i = 0; i < 5; i++)
+		{
+			NewList.push_back(i);
+			// NewList.push_front();
+		}
+
+		MyList::iterator rStartIter = NewList.rbegin();
+		MyList::iterator rEndIter = NewList.rend();
+
+
+
+		for (/*std::list<int>::iterator StartIter = NewList.begin()*/
+			; rStartIter != rEndIter
+			; --rStartIter)
+		{
+			std::cout << *rStartIter << std::endl;
+		}
 	}
 }
