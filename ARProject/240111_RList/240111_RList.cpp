@@ -47,11 +47,40 @@ public:
 			CurNode = CurNode->Next;
 		}
 
-		void operator--()
+
+	private:
+		ListNode* CurNode = nullptr;
+	};
+
+	class reverse_iterator
+	{
+		friend MyList;
+
+	public:
+		reverse_iterator()
+		{
+		}
+
+		reverse_iterator(ListNode* _CurNode)
+			: CurNode(_CurNode)
+		{
+		}
+
+		bool operator!=(const reverse_iterator& _Other)
+		{
+			return CurNode != _Other.CurNode;
+		}
+
+		DataType& operator*()
+		{
+			return CurNode->Data;
+		}
+
+		// 연산자 겹지정 중에 
+		void operator++()
 		{
 			CurNode = CurNode->Prev;
 		}
-
 
 	private:
 		ListNode* CurNode = nullptr;
@@ -89,14 +118,14 @@ public:
 		return iterator(End);
 	}
 
-	iterator rbegin()
+	reverse_iterator rbegin()
 	{
-		return iterator(End->Prev);
+		return reverse_iterator(End->Prev);
 	}
 
-	iterator rend()
+	reverse_iterator rend()
 	{
-		return iterator(Start);
+		return reverse_iterator(Start);
 	}
 
 	// End의 Prev에 새로운 데이터를 넣겠다.
@@ -212,14 +241,14 @@ int main()
 			// NewList.push_front();
 		}
 
-		MyList::iterator rStartIter = NewList.rbegin();
-		MyList::iterator rEndIter = NewList.rend();
+		MyList::reverse_iterator rStartIter = NewList.rbegin(); // End-Prev
+		MyList::reverse_iterator rEndIter = NewList.rend(); // Start
 
 
 
 		for (/*std::list<int>::iterator StartIter = NewList.begin()*/
 			; rStartIter != rEndIter
-			; --rStartIter)
+			; ++rStartIter) // Node-Prev
 		{
 			std::cout << *rStartIter << std::endl;
 		}
