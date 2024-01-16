@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="240116_SnakeTest.cpp" />
+    <ClCompile Include="Body.cpp" />
     <ClCompile Include="Head.cpp" />
     <ClCompile Include="Part.cpp" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Body.h" />
     <ClInclude Include="Head.h" />
     <ClInclude Include="Part.h" />
   </ItemGroup>

@@ -4,9 +4,11 @@
     <ClCompile Include="240116_SnakeTest.cpp" />
     <ClCompile Include="Part.cpp" />
     <ClCompile Include="Head.cpp" />
+    <ClCompile Include="Body.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Part.h" />
     <ClInclude Include="Head.h" />
+    <ClInclude Include="Body.h" />
   </ItemGroup>
 </Project>
