@@ -5,10 +5,12 @@
     <ClCompile Include="Part.cpp" />
     <ClCompile Include="Head.cpp" />
     <ClCompile Include="Body.cpp" />
+    <ClCompile Include="BodyManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Part.h" />
     <ClInclude Include="Head.h" />
     <ClInclude Include="Body.h" />
+    <ClInclude Include="BodyManager.h" />
   </ItemGroup>
 </Project>
