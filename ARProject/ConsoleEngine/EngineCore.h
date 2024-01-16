@@ -21,6 +21,7 @@ public :
 	{
 		return CreateObject<ObjectType>(_Order, _Order);
 	}
+
 	template<typename ObjectType, typename UpdateEnumType, typename RenderEnumType>
 	ObjectType* CreateObject(UpdateEnumType _UpdateOrder, RenderEnumType _RenderOrder)
 	{
@@ -76,7 +77,7 @@ protected:
 
 private:
 	// 관리감독하는 기능들을 여기에 모아 놓으라는 것.
-	//std::map<int, ConsoleUpdater*> AllManager;
+	std::map<int, ConsoleUpdater*> AllManager;
 
 	// 실제 움직이는 애들
 	std::map<int, std::list<ConsoleObject*>> AllUpdateObject;
