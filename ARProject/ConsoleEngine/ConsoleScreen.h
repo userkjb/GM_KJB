@@ -1,6 +1,7 @@
 #pragma once
 #include "EngineDebug.h"
 #include "ConsoleMath.h"
+#include <vector>
 
 class ConsoleScreen
 {
@@ -27,7 +28,8 @@ public :
 	}
 
 private:
-	char** ScreenData = nullptr;
+	//char** ScreenData = nullptr;
+	std::vector<std::vector<char>> ScreenData;
 	int ScreenX = -1;
 	int ScreenY = -1;
 };

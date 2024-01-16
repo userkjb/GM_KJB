@@ -1,5 +1,10 @@
 #include "ConsoleScreen.h"
+
 #include <iostream>
+#include <Windows.h>
+#include <assert.h>
+#include <conio.h>
+
 #include "ConsoleObject.h"
 
 
@@ -29,22 +34,28 @@ void ConsoleScreen::CreateScreen(int _ScreenX, int _ScreenY)
 	ScreenX = _ScreenX;
 	ScreenY = _ScreenY;
 
-	if (ScreenData != nullptr)
+	//if (ScreenData != nullptr)
+	if(ScreenData.size() != 0)
 	{
 		MsgBoxAssert("스크린이 만들어져 있습니다.");
 	}
 
-	ScreenData = new char* [_ScreenY];
-	if (ScreenData == nullptr)
+	//ScreenData = new char* [_ScreenY];
+	ScreenData.resize(ScreenY);
+
+	//if (ScreenData == nullptr)
+	if(ScreenData.size() == 0)
 	{
 		MsgBoxAssert("스크린 생성에 실패하였습니다.");
 	}
 
 	for (int y = 0; y < _ScreenY; y++)
 	{
-		ScreenData[y] = new char[_ScreenX + 2] {0, };
+		//ScreenData[y] = new char[_ScreenX + 2] {0, };
+		ScreenData[y].resize(ScreenX + 2);
 
-		if (ScreenData[y] == nullptr)
+		//if (ScreenData[y] == nullptr)
+		if(ScreenData[y].size() == 0)
 		{
 			MsgBoxAssert("스크린 생성에 실패했습니다.");
 		}
@@ -55,22 +66,24 @@ void ConsoleScreen::CreateScreen(int _ScreenX, int _ScreenY)
 
 void ConsoleScreen::ReleaseScreen()
 {
-	for (int y = 0; y < ScreenY; y++)
-	{
-		if (ScreenData[y] == nullptr)
-		{
-			continue;
-		}
+	ScreenData.clear();
 
-		delete[] ScreenData[y];
-		ScreenData[y] == nullptr;
-	}
+	//for (int y = 0; y < ScreenY; y++)
+	//{
+	//	if (ScreenData[y] == nullptr)
+	//	{
+	//		continue;
+	//	}
 
-	if (ScreenData == nullptr)
-	{
-		delete[] ScreenData;
-		ScreenData = nullptr;
-	}
+	//	delete[] ScreenData[y];
+	//	ScreenData[y] == nullptr;
+	//}
+
+	//if (ScreenData == nullptr)
+	//{
+	//	delete[] ScreenData;
+	//	ScreenData = nullptr;
+	//}
 }
 
 void ConsoleScreen::PrintScreen()
@@ -79,12 +92,17 @@ void ConsoleScreen::PrintScreen()
 
 	for (int y = 0; y < ScreenY; y++)
 	{
-		if (ScreenData[y] == nullptr)
+		//if (ScreenData[y] == nullptr)
+		if(ScreenData[y].size() == 0)
 		{
 			MsgBoxAssert("존재하지 않는 라인츨 출력하려고 했습니다.");
 		}
 
-		printf_s(ScreenData[y]);
+		std::vector<char>& Vector = ScreenData[y];
+		char& FirstChar = Vector[0];
+		char* PrintPtr = &FirstChar;
+		//printf_s(ScreenData[y]);
+		printf_s(PrintPtr);
 	}
 
 	ClearScreen();
