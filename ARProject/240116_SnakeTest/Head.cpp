@@ -28,26 +28,62 @@ void Head::Update()
 	case 'A':
 	case 'a':
 	{
-		AddPos(Left);
-		break;
+		int2 MovePos = GetPos() + Left;
+		if (MovePos == BeforePos)
+		{
+			break;
+		}
+		else
+		{
+			BeforePos = GetPos();
+			AddPos(Left);
+			break;
+		}
 	}
 	case 'D':
 	case 'd':
 	{
-		AddPos(Right);
-		break;
+		int2 MovePos = GetPos() + Right;
+		if (MovePos == BeforePos)
+		{
+			break;
+		}
+		else
+		{
+			BeforePos = GetPos();
+			AddPos(Right);
+			break;
+		}
 	}
 	case 'S':
 	case 's':
 	{
-		AddPos(Down);
-		break;
+		int2 MovePos = GetPos() + Down;
+		if (MovePos == BeforePos)
+		{
+			break;
+		}
+		else
+		{
+			BeforePos = GetPos();
+			AddPos(Down);
+			break;
+		}
 	}
 	case 'W':
 	case 'w':
 	{
-		AddPos(Up);
-		break;
+		int2 MovePos = GetPos() + Up;
+		if (MovePos == BeforePos)
+		{
+			break;
+		}
+		else
+		{
+			BeforePos = GetPos();
+			AddPos(Up);
+			break;
+		}
 	}	
 	case '1':
 		GetCore()->EngineEnd();
