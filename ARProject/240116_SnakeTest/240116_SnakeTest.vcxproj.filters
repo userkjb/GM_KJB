@@ -2,5 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="240116_SnakeTest.cpp" />
+    <ClCompile Include="Part.cpp" />
+    <ClCompile Include="Head.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Part.h" />
+    <ClInclude Include="Head.h" />
   </ItemGroup>
 </Project>
