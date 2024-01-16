@@ -1,5 +1,7 @@
 #pragma once
-class Body
+#include "Part.h"
+
+class Body : public Part
 {
 };
 
