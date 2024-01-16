@@ -1,11 +1,6 @@
 #pragma once
 class ConsoleUpdater
 {
-};
-
-#pragma once
-class ConsoleUpdater
-{
 	friend class EngineCore;
 
 public:
