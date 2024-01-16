@@ -100,9 +100,11 @@ void Head::Update()
 
 	Body* CurBody = BodyManager::GetCurBody();
 
+	// Ãæµ¹...
 	if (CurBody->GetPos() == GetPos())
 	{
 		Back = CurBody;
-		BodyManager::ResetBody();
+		BodyManager::ResetBody(); // CurBody nullptr
 	}
+
 }
