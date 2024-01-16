@@ -31,7 +31,7 @@ public :
 	ObjectType* CreateObject(int _UpdateOrder = 0, int _RenderOrder = 0)
 	{
 		ObjectType* NewObject = new ObjectType();
-		//NewObject->ConsoleUpdater::SetCore(this);
+		NewObject->ConsoleUpdater::SetCore(this);
 		AllUpdateObject[_UpdateOrder].push_back(NewObject);
 		AllRenderObject[_RenderOrder].push_back(NewObject);
 		return NewObject;
@@ -47,7 +47,7 @@ public :
 		}
 
 		ObjectType* NewObject = new ObjectType();
-		//NewObject->ConsoleUpdater::SetCore(this);
+		NewObject->ConsoleUpdater::SetCore(this);
 		AllManager[_UpdateOrder] = NewObject;
 		return NewObject;
 	}
