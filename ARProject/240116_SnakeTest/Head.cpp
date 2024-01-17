@@ -10,7 +10,10 @@
 
 Head::Head()
 {
-	BodyArr.assign(50, 0);
+	int x = GetCore()->Screen.GetScreenX();
+	int y = GetCore()->Screen.GetScreenY();
+	int VectorCapacitySize = (x * y) - 1;
+	BodyArr.assign(VectorCapacitySize, 0);
 	BodyArr.clear();
 }
 
