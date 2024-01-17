@@ -6,7 +6,7 @@
 class Head : public Part
 {
 public :
-	Head();
+	void BeginPlay();
 
 private :
 	int2 BeforePos = {0, 0};

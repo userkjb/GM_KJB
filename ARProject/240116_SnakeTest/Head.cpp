@@ -8,7 +8,7 @@
 //    내가 이동하는 방향의 반대방향으로는 가면 안된다.
 // 2. 내가 이동을 해서 CurBody를 획득했다면 그 다음부터 그 바디는 나를 따라와야 한다.
 
-Head::Head()
+void Head::BeginPlay()
 {
 	int x = GetCore()->Screen.GetScreenX();
 	int y = GetCore()->Screen.GetScreenY();

@@ -14,6 +14,7 @@ int main()
 
     {
         Head* NewPlayer = EngineCore.CreateObject<Head>();
+        NewPlayer->BeginPlay();
         NewPlayer->SetPos({ EngineCore.Screen.GetScreenX() / 2, EngineCore.Screen.GetScreenY() - 2 });
     }
 
