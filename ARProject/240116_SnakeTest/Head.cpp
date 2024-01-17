@@ -8,6 +8,12 @@
 //    내가 이동하는 방향의 반대방향으로는 가면 안된다.
 // 2. 내가 이동을 해서 CurBody를 획득했다면 그 다음부터 그 바디는 나를 따라와야 한다.
 
+Head::Head()
+{
+	BodyArr.assign(50, 0);
+	BodyArr.clear();
+}
+
 void Head::Update()
 {
 	int InputCount = _kbhit();
@@ -92,6 +98,27 @@ void Head::Update()
 		break;
 	}
 
+	// Body Move
+	{
+		int ArrSize = BodyArr.size(); // 5
+		if (ArrSize != 0)
+		{
+			for (int i = 0; i < ArrSize; i++)
+			{
+				int SetNum = ArrSize - (i + 1); // 4
+				int GetNum = SetNum - 1; // 3
+				if (SetNum != 0)
+				{
+					BodyArr[SetNum]->SetPos(BodyArr[GetNum]->GetPos());
+				}
+				else if (SetNum == 0)
+				{
+					BodyArr[SetNum]->SetPos(BeforePos);
+				}
+			}
+		}
+	}
+
 	if (nullptr == BodyManager::GetCurBody())
 	{
 		MsgBoxAssert("먹을수 있는 바디가 존재하지 않습니다.");
@@ -103,8 +130,10 @@ void Head::Update()
 	// 충돌...
 	if (CurBody->GetPos() == GetPos())
 	{
-		Back = CurBody;
-		BodyManager::ResetBody(); // CurBody nullptr
-	}
+		//Back = CurBody;
+		//BodyManager::ResetBody(); // CurBody nullptr
 
+		BodyArr.push_back(CurBody);
+		BodyManager::ResetBody();
+	}
 }
